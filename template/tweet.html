@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/bootstrap.css">
+</head>
+<style>
+    .box{
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+</style>
+<body>
+    {% include 'header.html' %}
+   <div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+            <div class="col-6 bg-warning mt-5 p-5 box">
+            <form  method="post" action="{% url 'tweetm' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Title</label>
+              <input type="text" class="form-control"  placeholder="title..." name="title" >
+              </div>
+                <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Image</label>
+              <input type="file" class="form-control" name="image">
+              </div>
+              <div class="mb-3">
+               <label for="exampleFormControlInput1" class="form-label">DESCRIPTION</label>
+               <TEXTarea class="form-control" name="desc" placeholder="text..."></TEXTarea>
+             </div>
+             
+              <button class="btn btn-dark fw-bold" type="submit">Create Now</button>
+              </form>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div> 
+</body>
+</html>

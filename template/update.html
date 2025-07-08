@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/bootstrap.css">
+</head>
+<body>
+    {% include 'header.html' %}
+   <div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+            <div class="col-6 bg-warning mt-5 p-5 box">
+            <form method="post" action="{% url 'updatedata' data.id %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Title</label>
+              <input type="text" class="form-control"  placeholder="title..." name="title" value="{{data.title}}" >
+              </div>
+                <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Image</label>
+              <input type="file" class="form-control" name="image">
+              </div>
+              <div class="mb-3">
+               <label for="exampleFormControlInput1" class="form-label">DESCRIPTION</label>
+               <TEXTarea class="form-control" name="desc" placeholder="text...">{{data.desc}}</TEXTarea>
+             </div>
+              <button class="btn btn-dark fw-bold" type="submit">Update Now</button>
+              </form>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div> 
+    
+</body>
+</html>

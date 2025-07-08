@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="/static/bootstrap.css">
+    <title>Document</title>
+</head>
+<style>
+    form{
+        box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+        backdrop-filter: blur(10px);
+        background-color: #8DD8FF;
+    }
+</style>
+<body>
+    {% include 'header.html' %}
+    <div class="container mt-1" >
+        <div class="row">
+            <div class="col-md-12 text-center bg-info">
+               <h4 class="fw-bold pt-1">WECOME TO THIS PROJECT</h4>
+            </div>
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <form action="{{ hello }}" method="post" class="border border-1 rounded rounded-5 mt-5 p-5">
+                {% csrf_token %}
+                <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label fw-bold">User Name</label>
+                 <input type="text" class="form-control" name="user" placeholder="Enter Name...">
+                </div>   
+                <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label fw-bold">Email Address</label>
+                 <input type="email" class="form-control" name="email"  placeholder="name@example.com...">
+                </div>
+                <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label fw-bold">Password</label>
+                 <input type="password" class="form-control" name="password" placeholder="Enter Password...">
+                </div>   
+                 <div class="aleardy mb-3 ms-2">
+                   <input type="checkbox">  I agree with<a href="#" class="ps-1">Terms&Conditions</a>
+                  </div>    
+                <div class="mb-3 text-center">
+                  <button class="btn btn-primary fw-bold px-5 text-light" type="submit">Sing in</button>
+                </div>
+                <hr>
+                <div class="aleardy mb-3 ms-2">
+                 if already have account<a href="#" class="ps-1">Login</a>
+                </div> 
+                </form>
+            </div>
+             <div class="col-md-3"></div>
+        </div>
+    </div>
+    <script src="/static/login.js"></script>
+</body>
+</html>
