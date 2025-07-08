@@ -1,4 +1,5 @@
 Django 
 gunicorn
 requests
+django-tinymce
 
